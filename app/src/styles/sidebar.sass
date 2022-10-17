@@ -1,0 +1,48 @@
+nav
+  background-color: #21232E
+  position: fixed
+  left: 0
+  top: 0
+  bottom: 0
+  display: flex
+  flex-direction: column
+  justify-content: space-between
+  z-index: 9999999
+  border-radius: 0 15px 15px 0
+  padding: 20px
+.nav
+  &--heading
+    display: flex
+    flex-direction: column
+    align-items: center
+    gap: 20px
+    &--photo-wrapper
+      margin: 0
+      text-align: center
+      font-size: 18px
+      img
+        width: 80px
+        height: 80px
+        overflow: hidden
+        margin: 0 auto
+        border-radius: 100%
+        background-color: #eee
+    &--username
+      font-size: 24px
+      font-weight: 400
+  &--body
+    display: flex
+    flex-direction: column
+    gap: 20px
+
+.sidebar-button
+  display: flex
+  align-items: center
+  background-color: #161821
+  text-align: center
+  padding: 20px
+  gap: 10px
+  border-radius: 15px
+  transition: 350ms ease-in
+.sidebar-button:hover
+  box-shadow: 0 0 10px #6839EF

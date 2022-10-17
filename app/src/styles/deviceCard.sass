@@ -1,0 +1,69 @@
+.device-card
+  display: flex
+  align-items: center
+  flex-direction: column
+  background-color: #21232E
+  border-radius: 15px
+  gap: 40px
+  width: 160px
+  padding: 65px 70px 25px 70px
+  &--icon
+    font-size: 42px
+  &--content
+    display: flex
+    flex-direction: column
+    align-items: center
+    gap: 25px
+    &--name
+      font-size: 24px
+      font-weight: 400
+    &--btn
+      padding: 10px 0
+      border-radius: 30px
+      border: none
+      cursor: pointer
+      width: 150px
+      font-size: 18px
+      color: rgba(255, 255, 255, 0.7)
+      background-color: #6839EF
+      letter-spacing: 0.3em
+      transition: 350ms ease-in
+    &--btn:hover
+      box-shadow: 0 0 10px #6839EF
+
+.modal
+  display: flex
+  flex-direction: column
+  align-items: center
+  gap: 30px
+  &--overlay
+    position: fixed
+    top: 0
+    left: 0
+    right: 0
+    bottom: 0
+    background-color: rgba(22, 24, 33, 0.8)
+  &--heading
+    &--title
+      font-size: 32px
+      font-weight: 400
+  &--form
+    display: flex
+    flex-direction: column
+    gap: 15px
+    width: 100%
+    &--id-input
+      padding: 10px
+      border-radius: 15px
+      border: none
+      font-family: Montserrat, sans-serif
+      font-size: 16px
+    &--submit
+      cursor: pointer
+      padding: 10px
+      border-radius: 15px
+      border: none
+      font-size: 16px
+      background-color: #6839EF
+      color: #fff
+      font-family: Montserrat, sans-serif
