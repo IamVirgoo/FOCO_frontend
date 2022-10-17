@@ -10,6 +10,7 @@ import './styles/footer.sass';
 import './styles/sidebar.sass';
 import './styles/card.sass';
 import './styles/deviceCard.sass';
+import './styles/error.sass';
 
 import Index from "./pages/landing";
 import Login from './pages/admin-panel/login';
