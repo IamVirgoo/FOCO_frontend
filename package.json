@@ -11,7 +11,8 @@
     "pnpm": "^7.13.5"
   },
   "scripts": {
-    "dev": "pnpm --parallel dev"
+    "dev": "pnpm --parallel dev",
+    "test:ui": "yarn workspace @flumine/foco-app run build && yarn workspace @flumine/foco-app run serve & yarn workspace @flumine/foco-ui-test test:run"
   },
   "workspaces": [
     "workspaces/*"
