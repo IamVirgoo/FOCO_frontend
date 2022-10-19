@@ -1,0 +1,19 @@
+{
+  "name": "foco-frontend",
+  "version": "1.0.0",
+  "description": "Foco frontend app",
+  "main": "index.js",
+  "repository": "https://git.jetbrains.space/flumine/foco/FOCO_frontend_UwU.git",
+  "author": "assertionLimit <markushasorokin@yandex.com>",
+  "license": "Foco commercial License",
+  "private": true,
+  "devDependencies": {
+    "pnpm": "^7.13.5"
+  },
+  "scripts": {
+    "dev": "pnpm --parallel dev"
+  },
+  "workspaces": [
+    "workspaces/*"
+  ]
+}
