@@ -23,6 +23,10 @@ import Error from "./pages/ErrorPage";
 import reportWebVitals from './reportWebVitals';
 import AppOutlet from './layout/AppOutlet';
 import {Route} from "./router";
+import {initDB} from "react-indexed-db";
+import {DBConfig} from "./devtool/DBConfig";
+
+initDB(DBConfig);
 
 const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement

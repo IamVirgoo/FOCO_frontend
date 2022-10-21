@@ -15,7 +15,7 @@ export default function Sidebar(props : any) {
 		</div>
 		<div className="nav--body">
 			<Button buttonContent="Home" buttonIcon={plus} href="/admin"/>
-			<Button buttonContent="Devices" buttonIcon={plus} href="/devices"/>
+			<Button buttonContent="Devices" buttonIcon={plus} href="/admin/devices"/>
 		</div>
 		<div className="nav--footer">
 			<Button buttonContent="Exit" buttonIcon={exit} href="/"/>

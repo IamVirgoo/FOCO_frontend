@@ -23,23 +23,28 @@ export const Route = createBrowserRouter([
 		element: <Register/>
 	},
 	{
-		path: "admin",
-		element: <Panel/>,
-		/*children: [
+		path: "/admin",
+		element: <AppOutlet/>,
+		children: [
 			{
 				index: true,
-				element: <Devices />
+				element: <Panel/>
 			},
 			{
-				path: "/panel",
-				element: <Panel />
-			}
-		]*/
+				path: "devices",
+				element: <Devices/>
+			},
+		]
 	},
 	{
+		path: "/error",
+		errorElement: <Error/>,
+		hasErrorBoundary: true
+	}
+	/*{
 		path: 'devices',
 		element: <Devices/>
-	}
+	}*/
 ], {
 	basename: "/"
 });
