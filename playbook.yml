@@ -1,0 +1,8 @@
+---
+- name: <description>
+  hosts: all
+  become: true
+  pre_tasks:
+    - name: Installing NodeJS
+      ansible.builtin.apt:
+          name: nodejs

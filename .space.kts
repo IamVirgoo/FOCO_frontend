@@ -6,13 +6,11 @@
 
 job("Basic setup") {
     container(image = "flumine.registry.jetbrains.space/p/flumine/docker-images/ansible:0.1.0") {
-    	shellScript {
-			shellScript {
-            	content = """
-                	apt-get install -y nodejs npm
-                    npm i --dev
-                """
-            }
+        shellScript {
+            content = """
+                apt-get install -y nodejs npm
+                npm i --dev
+            """
         }
     }
 }
