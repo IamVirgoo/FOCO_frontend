@@ -32,8 +32,8 @@ export const Route = createBrowserRouter([
 			},
 			{
 				path: "devices",
-				element: <Devices/>
-			},
+				element: <Devices/>,
+			}
 		]
 	},
 	{

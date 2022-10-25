@@ -1,9 +1,13 @@
 import Sidebar from "../../components/admin-panel/sidebar";
 import DeviceCard from "../../components/admin-panel/deviceCard";
-import {useEffect, useState} from "react";
+import {useCallback, useEffect, useState} from "react";
 //@ts-ignore
 import Modal from "react-modal";
 import {useIndexedDB} from "react-indexed-db";
+import { append_device, devicesReducer, device_list } from "../../slices/devices";
+import { useDispatch, useSelector } from "react-redux";
+import { AppState } from "../../stores/appStore";
+
 /**
  * @name customStyles
  * @description styles for modal overlay
@@ -23,31 +27,31 @@ const customStyles = {
 };
 
 export default function Devices() {
-	/**
-	 * @description initialization states for ID input field and states for DataBase info
-	 * */
+	const dispath = useDispatch();
+	const dev = useSelector((state : AppState) => state.devices)
+	console.log(dev.values);
+
+	
 	const [ID, setId] = useState('')
 	const [infoContainer, setInfoContainer] = useState<[{name : string, deviceID : string}] | null>();
-	/**
-	 * @description initialization the react-indexed-db actions:
-	 * <li>add - for inserting data into DataBase "devices" table<li/>
-	 * <li>getAll - for getting all data from DataBase "devices" table<li/>
-	 * */
-	const { add, getAll } = useIndexedDB("devices");
-	/**
-	 * @name handleClick
-	 * @description function for inserting data into DataBase from <form>
-	 * */
+
+
+	/* const { add, getAll } = useIndexedDB("devices"); */
+
+
 	const handleClick = () => {
-		add({
+		/* add({
 			name : "Name",
 			deviceID : ID
-		}).then();
+		}).then(); */
+		dispath(append_device({
+			deviceName : "device" + dev.values.lastIndexOf,
+			deviceID : 2
+		}))
 	}
-	/**
-	 * @description dynamic setting data from DataBase in infoContainer state
-	 * */
-	useEffect(() => {
+
+
+	/* useEffect(() => {
 		getAll().then(
 			(data) => {
 				data.map(
@@ -57,7 +61,10 @@ export default function Devices() {
 				)
 			}
 		)
-	}, [])
+	}, []) */
+
+
+
 	/***/
 	let subtitle;
 	/**
@@ -89,8 +96,8 @@ export default function Devices() {
 			</div>
 			<div className="admin--content">
 				{
-					infoContainer?.map(
-						(value) => <DeviceCard name={value.deviceID}/>
+					dev.values.map(
+						(value) => <DeviceCard name={value.deviceName}/>
 					)
 				}
 			</div>
@@ -108,7 +115,7 @@ export default function Devices() {
 							className="modal--heading--title">Add new Device
 						</h3>
 					</div>
-					<form className="modal--form" method="post" onSubmit={handleClick}>
+					<form className="modal--form" method="post" /* onSubmit={handleClick} */>
 						<input id='id-input' className="modal--form--id-input"
 							   type="text"
 							   placeholder="Input device id"

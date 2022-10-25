@@ -12,19 +12,13 @@ import './styles/card.sass';
 import './styles/deviceCard.sass';
 import './styles/error.sass';
 
-import Index from "./pages/landing";
-import Login from './pages/admin-panel/login';
-import Admin from './pages/admin-panel/adminPanel'
-import Register from './pages/admin-panel/register';
-import Devices from "./pages/admin-panel/devices";
-import Statistics from "./pages/admin-panel/statistics";
-import Error from "./pages/ErrorPage";
+import { appStore } from "./stores/appStore";
 
 import reportWebVitals from './reportWebVitals';
-import AppOutlet from './layout/AppOutlet';
 import {Route} from "./router";
 import {initDB} from "react-indexed-db";
 import {DBConfig} from "./devtool/DBConfig";
+import { Provider } from 'react-redux';
 
 initDB(DBConfig);
 
@@ -32,33 +26,12 @@ const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement
 )
 
-// {/*http://localhost:5173/admin/devices*/}
-/*
-    {/*
-    <React.StrictMode>
-        <Router>
-            <Routes>
-                <Route index element={<Index/>}/>
-                <Route path='login' element={<Login/>} />
-                <Route path={"admin"}>
-                    <Route element={<AppOutlet/>} >
-                        <Route index element={<Admin/>} id={"admin_index"} />
-                        <Route path="devices" element={<Devices/>} id={"admin_devices"}/>
-                    </Route>
-                </Route>
-
-                <Route path={'register'} element={<Register/>}/>
-                <Route path={'*'} element={<Error/>}/>
-            </Routes>
-            <Outlet/>
-        </Router>
-    </React.StrictMode>
-*/
-
 const App = () => {
     return <>
         <React.StrictMode>
-            <RouterProvider router={Route} />
+            <Provider store={appStore}>
+                <RouterProvider router={Route} />
+            </Provider>
         </React.StrictMode>
     </>
 };
