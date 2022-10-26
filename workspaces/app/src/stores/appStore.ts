@@ -2,12 +2,13 @@ import { configureStore } from "@reduxjs/toolkit"
 import { useDispatch, useSelector, TypedUseSelectorHook } from "react-redux";
 import { userReducer} from "../slices/user";
 import { devicesReducer } from "../slices/devices";
-
+import { statisticsReducer } from "../slices/statistics";
 // Primary storage
 export const appStore = configureStore({
     reducer: {
         user: userReducer,
-        devices: devicesReducer
+        devices: devicesReducer,
+        statistic: statisticsReducer
     },
     middleware: (getDefaultMiddleware) => 
                 getDefaultMiddleware()
