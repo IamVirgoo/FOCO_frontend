@@ -1,14 +1,15 @@
-import { IDBPDatabase, openDB } from "idb"
-import { legacy_createStore as createStore } from "redux";
-import { createSlice } from "@reduxjs/toolkit";
-
-import * as info from "./dev_info";
-import * as types from "./types";
-
-export const reducer = (state: JSON, action : any) => {
-	switch (action) {
-		case types.actionType.RECEIVED :
-			return info.cardData.data
+export function getImg(name : string) {
+	switch (name) {
+		case "Humidity" : return "../../public/admin-panel/icons/drop.svg";
+		case "Temperature" : return "../../public/admin-panel/icons/capsule.svg";
+		case "Luminosity" : return "../../public/admin-panel/icons/sun.svg";
 	}
-	return state
+}
+
+export function getMetric(name : string) {
+	switch (name) {
+		case "Humidity" : return "Percent (%)";
+		case "Luminosity" : return "Percent (%)";
+		case "Temperature" : return "Celsius degree";
+	}
 }
