@@ -11,11 +11,6 @@ export default function Panel() {
 	const stat = useSelector((state : AppState) => state.statistic)
 	const { data, error, isLoading } = getStat();
 	return <>
-		{
-			isLoading ? 
-				<h1>Loading</h1> : 
-				<script>console.log(data)</script>
-		}
 		<Sidebar/>
 		<main>
 			<h1 className="admin--heading">Overview</h1>
@@ -29,6 +24,11 @@ export default function Panel() {
 							metric={sdk.getMetric(value.statisticTypeName)}
 						/>
 					)
+				}
+				{
+				isLoading ? 
+					<h1>Loading</h1> : 
+					<h1>{data.values.at(0)?.statisticNumber}</h1>
 				}
 			</div>
 		</main>

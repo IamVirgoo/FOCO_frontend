@@ -4,7 +4,7 @@ import { NextApiRequest, NextApiResponse } from "next";
 export default (req: NextApiRequest, res: NextApiResponse) => {
 	if (req.method == "GET") {
 		return res.status(200)
-			.json([
+			.json({values: [
 				{
 					statisticTypeName: "Humidity",
 					statisticNumber: 40.50
@@ -17,7 +17,7 @@ export default (req: NextApiRequest, res: NextApiResponse) => {
 					statisticTypeName: "Luminosity",
 					statisticNumber: 52
 				},
-			]);
+			]});
 	}
 
 	return res.status(505)
