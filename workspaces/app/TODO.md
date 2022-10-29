@@ -1,4 +1,4 @@
 - Service Worker
-  - [-] Implement registration
-  - [-] Inject handling the websocket connections
-  - [-] Injecting null-base ID structure
+  - [ ] Implement registration
+  - [ ] Inject handling the websocket connections
+  - [ ] Injecting null-base ID structure
