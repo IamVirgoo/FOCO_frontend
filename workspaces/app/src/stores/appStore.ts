@@ -3,6 +3,7 @@ import { useDispatch, useSelector, TypedUseSelectorHook } from "react-redux";
 import { userReducer} from "../slices/user";
 import { devicesReducer } from "../slices/devices";
 import { statisticsReducer } from "../slices/statistics";
+import {DataMiddleware} from "../middleware/dataMiddleware";
 // Primary storage
 export const appStore = configureStore({
     reducer: {
@@ -10,9 +11,10 @@ export const appStore = configureStore({
         devices: devicesReducer,
         statistic: statisticsReducer
     },
-    middleware: (getDefaultMiddleware) => 
-                getDefaultMiddleware()
-                    //.prepend();
+    middleware: (getDefaultMiddleware) => getDefaultMiddleware()
+        .prepend(
+            DataMiddleware.middleware
+        )
 });
 
 // My types for redux
