@@ -1,14 +1,21 @@
-import { useDispatch, useSelector } from "react-redux";
+import { useSelector } from "react-redux";
 import { AppState } from "../../stores/appStore";
 
 import Sidebar from "../../components/admin-panel/sidebar";
 import DataCard from "../../components/admin-panel/dataCard";
 
 import * as sdk from '../../devtool/sdk';
+import { getStat } from "../../middleware/dataMiddleware";
 
 export default function Panel() {
 	const stat = useSelector((state : AppState) => state.statistic)
+	const { data, error, isLoading } = getStat();
 	return <>
+		{
+			isLoading ? 
+				<h1>Loading</h1> : 
+				<script>console.log(data)</script>
+		}
 		<Sidebar/>
 		<main>
 			<h1 className="admin--heading">Overview</h1>

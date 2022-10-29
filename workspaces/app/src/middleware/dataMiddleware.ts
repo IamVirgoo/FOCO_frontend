@@ -1,4 +1,4 @@
-import {createApi, fetchBaseQuery} from "@reduxjs/toolkit/query";
+import {createApi, fetchBaseQuery} from "@reduxjs/toolkit/dist/query/react";
 import {Statistics} from "../slices/statistics";
 
 export const DataMiddleware = createApi({
@@ -8,9 +8,11 @@ export const DataMiddleware = createApi({
 	}),
 	endpoints: (builder) => ({
 		getStat: builder.query<Statistics, void>({
-			//TODO: ...
+			query: ()  => ({
+				url: "/"
+			})
 		}),
 	}),
 })
 
-export const { useGetStat } = DataMiddleware;
+export const getStat = DataMiddleware.endpoints.getStat.useQuery;
