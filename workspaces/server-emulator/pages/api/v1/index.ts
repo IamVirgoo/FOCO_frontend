@@ -9,6 +9,8 @@ export default (req: NextApiRequest, res: NextApiResponse) => {
 
 	if (req.method == "GET") {
 		return res.status(200)
+			.setHeader("Access-Control-Allow-Origin", "*")
+			.setHeader("Access-Control-Allow-Headers", "*")
 			.json({values: [
 				{
 					statisticTypeName: "Humidity",
