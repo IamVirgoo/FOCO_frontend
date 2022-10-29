@@ -20,6 +20,11 @@ export default (req: NextApiRequest, res: NextApiResponse) => {
 			]});
 	}
 
+	if (req.method == "OPTIONS") {
+		return res.status(200)
+					.json(null);
+	}
+
 	return res.status(505)
 		.json({message: "method not allowed"})
 }
