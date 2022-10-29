@@ -1,7 +1,12 @@
 import { NextApiRequest, NextApiResponse } from "next";
 
+const debugTrace = (req: NextApiRequest) => {
+	console.log(new Date().toUTCString(), req.headers, req.method);
+}
 
 export default (req: NextApiRequest, res: NextApiResponse) => {
+	debugTrace(req);
+
 	if (req.method == "GET") {
 		return res.status(200)
 			.json({values: [

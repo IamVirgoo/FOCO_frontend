@@ -28,7 +28,7 @@ export default function Panel() {
 				{
 				isLoading ? 
 					<h1>Loading</h1> : 
-					<h1>{data.values.at(0)?.statisticNumber}</h1>
+					<h1>{data?.values.at(0)?.statisticNumber}</h1>
 				}
 			</div>
 		</main>
