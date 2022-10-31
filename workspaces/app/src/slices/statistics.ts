@@ -24,6 +24,10 @@ const initialData : Statistics = {
             statisticTypeName: "Luminosity",
             statisticNumber: 52
         },
+        {
+            statisticTypeName: "Voltage",
+            statisticNumber: 52
+        },
     ]
 };
 

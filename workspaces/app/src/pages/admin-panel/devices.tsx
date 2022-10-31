@@ -8,6 +8,8 @@ import { append_device, devicesReducer, device_list } from "../../slices/devices
 import { useDispatch, useSelector } from "react-redux";
 import { AppState } from "../../stores/appStore";
 
+import chip from "../../../public/admin-panel/icons/chip.svg";
+
 /**
  * @name customStyles
  * @description styles for modal overlay
@@ -88,16 +90,23 @@ export default function Devices() {
 	return <>
 		<Sidebar/>
 		<main>
-			<div className="admin--wrapper">
-				<h1 className="admin--wrapper--heading">Your devices</h1>
-				<button className="admin--wrapper--add" id='id' onClick={Open}>
-					Add new
-				</button>
+			<div className="admin--heading">
+				<div className="admin--heading--wrapper">
+					<h1 className="admin--heading--hello">Your Device</h1>
+					<button className="admin--heading--wrapper--add" onClick={Open}>
+						Add new
+					</button>
+				</div>
+				<div className="admin--heading--user">
+					<div className="admin--heading--user--photo-wrapper">
+						<img src="https://upload.wikimedia.org/wikipedia/ru/9/94/%D0%93%D0%B8%D0%B3%D0%B0%D1%87%D0%B0%D0%B4.jpg" alt=""/>
+					</div>
+				</div>
 			</div>
 			<div className="admin--content">
 				{
 					dev.values.map(
-						(value) => <DeviceCard name={value.deviceName}/>
+						(value) => <DeviceCard icon={chip} name={value.deviceName}/>
 					)
 				}
 			</div>

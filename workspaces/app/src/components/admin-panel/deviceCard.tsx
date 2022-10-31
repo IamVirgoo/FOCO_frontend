@@ -16,23 +16,23 @@ export default function DeviceCard(props : any) {
 		config : {tension: 150}
 	})
 	return <animated.div className={"device-card"} style={{...load}}>
-		<p className={"device-card--icon"}>Icon</p>
-		{/*<img src={props.icon} alt=""/>*/}
 		<div className="device-card--content">
-			<h2 className="device-card--content--name">{props.name || "Device name"}</h2>
+			<img src={props.icon} alt=""/>
+			<p className="device-card--content--name">{props.name || "Device Name"}</p>
 			<button className="device-card--content--btn" onClick={(e) => {
 				if (enableState == "Disabled") {
 					setEnableState("Enabled")
 					setColor("#6839EF")
 				} else {
-					setColor("#21232E")
+					setColor("#070410")
 					setEnableState("Disabled")
 				}
 			}} style={
 				{
 					backgroundColor: color
-				}
-			}>{enableState}</button>
+				}}>
+				{enableState}
+			</button>
 		</div>
 	</animated.div>
 }
