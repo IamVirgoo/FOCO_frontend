@@ -1,7 +1,6 @@
 import { useSelector } from "react-redux";
 import { AppState } from "../../stores/appStore";
 
-import Sidebar from "../../components/admin-panel/sidebar";
 import DataCard from "../../components/admin-panel/dataCard";
 
 import * as sdk from '../../devtool/sdk';
@@ -15,7 +14,6 @@ export default function Panel(props: any) {
 	const stat = useSelector((state : AppState) => state.statistic)
 	const { data, error, isLoading } = getStat();
 	return <>
-		<Sidebar/>
 		<main className="admin">
 			<div className="admin--heading">
 				<h1 className="admin--heading--hello">Hello, {props.username || "{User}"}</h1>

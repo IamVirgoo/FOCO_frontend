@@ -13,16 +13,6 @@ export default function DataCard(props : any) {
 	return <animated.div className="data-card"
 		style={{...anim}}
 	>
-		{/*<h4 className="data-card--heading">
-			{props.Name}
-		</h4>
-		<div className="data-card--body">
-			<img src={props.dataIcon} alt=""/>
-			<p>{props.statNumber}</p>
-		</div>
-		<p className="data-card--footer">
-			{props.metric}
-		</p>*/}
 		<div className="data-card--content">
 			<img src={props.dataIcon} alt=""/>
 			<p className="data-card--content--number">{props.statNumber}{props.metric}</p>

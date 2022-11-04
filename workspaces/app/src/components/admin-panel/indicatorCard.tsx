@@ -1,7 +1,16 @@
-import devices from "../../../public/admin-panel/icons/devices.svg";
+import {animated, useSpring} from "react-spring";
 
 export default function IndicatorCard(props: any) {
-	return <div className="admin--indicators--enabling">
+	const anim = useSpring({
+		from : {
+			opacity: 0
+		},
+		to : {
+			opacity: 1
+		},
+		config: {tension: 150}
+	})
+	return <animated.div className="admin--indicators--enabling" style={{...anim}}>
 		<div className="admin--indicators--enabling--content">
 			<div className="admin--indicators--enabling--content--wrapper">
 				<img src={props.icon} alt=""/>
@@ -9,5 +18,5 @@ export default function IndicatorCard(props: any) {
 			</div>
 			<p className="admin--indicators--enabling--content--title">{props.description}</p>
 		</div>
-	</div>
+	</animated.div>
 }

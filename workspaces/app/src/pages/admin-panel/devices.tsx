@@ -88,7 +88,6 @@ export default function Devices() {
 		setModalIsOpen(false)
 	}
 	return <>
-		<Sidebar/>
 		<main>
 			<div className="admin--heading">
 				<div className="admin--heading--wrapper">
