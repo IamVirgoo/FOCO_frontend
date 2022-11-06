@@ -20,7 +20,6 @@ export default function ArrowInfo(props : any) {
                             config: {
                                 tension: 80
                             },
-                            delay: 800
                         })
                     }
                 >
@@ -31,22 +30,21 @@ export default function ArrowInfo(props : any) {
                 </animated.div>
             :
             <animated.div className="about--content__right-info"
-                    style={
-                        useSpring({
-                            from: {
-                                x: 500,
-                                opacity: 0
-                            },
-                            to: {
-                                x: -100,
-                                opacity: 1
-                            },
-                            config: {
-                                tension: 100
-                            },
-                            delay: 800
-                        })
-                    }
+                      style={
+                          useSpring({
+                              from: {
+                                  x: 500,
+                                  opacity: 0
+                              },
+                              to: {
+                                  x: -100,
+                                  opacity: 1
+                              },
+                              config: {
+                                  tension: 80
+                              },
+                          })
+                      }
                 >
                     <p className="about--content__right-info--description">
                         Lorem ipsum dolor sit<br/>amet, consectetur<br/>adipiscing elit.

@@ -15,7 +15,6 @@ export default function Scope(props: any) {
 			tension: 80,
 			friction: 10
 		},
-        delay: 2000
 	})
 	let counter = 0;
 	const [Color, setColor] = useState(false)

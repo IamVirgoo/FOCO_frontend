@@ -9,8 +9,10 @@ import Iphone from "../../../public/landing/icons/iPhone 11 Pro Max.svg";
 import Ipad from "../../../public/landing/icons/iPad Pro 12.svg";
 
 import {animated, useSpring} from "react-spring";
+import {InView, useInView} from "react-intersection-observer";
 
 function Index() {
+
 	const IphoneStyles = useSpring({
 		from: {
             x: 500,
@@ -79,28 +81,47 @@ function Index() {
                     A <span>smart</span> home is...
                 </h2>
             </div>
-            <div className="about--content">
-                <ArrowInfo type="right"/>
-                <ArrowInfo type="left"/>
-            </div>
+            <InView>
+                {({inView, ref, entry}) => (
+                        <div className="about--content" ref={ref}>
+                            {/*<ArrowInfo type="right"/>
+                            <p>{`${inView}.`}</p>
+                            <ArrowInfo type="left"/>*/}
+                            {inView
+                                ? <><ArrowInfo type="right"/>
+                                <ArrowInfo type="left"/></>
+                                : <></>
+                            }
+                        </div>
+                    )
+                }
+            </InView>
         </section>
         <section className="scope" id='scope'>
             <div className="container">
                 <h2 className="scope--title">
                     <span>Scope</span> of Work
                 </h2>
-                <div className="scope--content">
-                    {info.scope_info.map(
-                        (value) => <>
-                            <Scope id="elem"
-                                   number={value.number}
-                                   title={value.title}
-                                   description={value.description}
-                                   from={value.from}
-                            />
-                        </>
-                    )}
-                </div>
+                <InView>
+                    {({inView, ref, entry}) => (
+                            <div className="scope--content" ref={ref}>
+                                {inView
+                                        ? info.scope_info.map(
+                                        (value) => <>
+                                            <Scope id="elem"
+                                                   number={value.number}
+                                                   title={value.title}
+                                                   description={value.description}
+                                                   from={value.from}
+                                            />
+                                        </>
+                                    )
+                                    : <></>
+                                }
+                            </div>
+                        )
+                    }
+                </InView>
             </div>
         </section>
         <section className="architecture" id="architecture">
