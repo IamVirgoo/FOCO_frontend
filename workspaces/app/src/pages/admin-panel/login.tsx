@@ -1,5 +1,6 @@
 import {useNavigate} from "react-router-dom";
 import {useState} from "react";
+import CheckBox from "../../components/admin-panel/checkbox";
 
 const users = [{
 	username : "admin",
@@ -28,7 +29,11 @@ export default function Login() {
 			</h1>
 			<form className="login--form" onSubmit={handleSubmit} method="post">
 				<input type="input" placeholder="Username" onChange={ (e) => setUsername(e.target.value) }/>
-				<input type="password" placeholder="Password" onChange={ (e) => setPassword(e.target.value) }/>
+				<input type="password" className="login--form--pass" placeholder="Password" onChange={ (e) => setPassword(e.target.value) }/>
+				<div className="login--form--check">
+					<CheckBox/>
+					<a href="" className="login--form--check--forget">Forget password?</a>
+				</div>
 				<input type="submit" value="Confirm" className="login--form--submit"/>
 				<p className="login--form--sign-up">
 					no register? <a href='/register'>sign up</a>

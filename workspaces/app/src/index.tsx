@@ -11,6 +11,7 @@ import './styles/sidebar.sass';
 import './styles/card.sass';
 import './styles/deviceCard.sass';
 import './styles/error.sass';
+import './styles/checkbox.sass';
 
 import { appStore } from "./stores/appStore";
 

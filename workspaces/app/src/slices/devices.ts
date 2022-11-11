@@ -17,6 +17,14 @@ const initialData : Devices = {
             deviceName : "device-1",
             deviceID : 1
         },
+        {
+            deviceName : "device-2",
+            deviceID : 2
+        },
+        {
+            deviceName : "device-3",
+            deviceID : 3
+        },
     ]
 }
 

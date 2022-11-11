@@ -8,11 +8,10 @@ import * as info from "../../devtool/dev_info";
 import Iphone from "../../../public/landing/icons/iPhone 11 Pro Max.svg";
 import Ipad from "../../../public/landing/icons/iPad Pro 12.svg";
 
-import {animated, useSpring} from "react-spring";
-import {InView, useInView} from "react-intersection-observer";
+import { animated, useSpring } from "react-spring";
+import { InView } from "react-intersection-observer";
 
 function Index() {
-
 	const IphoneStyles = useSpring({
 		from: {
             x: 500,
@@ -82,11 +81,8 @@ function Index() {
                 </h2>
             </div>
             <InView>
-                {({inView, ref, entry}) => (
+                {({inView, ref}) => (
                         <div className="about--content" ref={ref}>
-                            {/*<ArrowInfo type="right"/>
-                            <p>{`${inView}.`}</p>
-                            <ArrowInfo type="left"/>*/}
                             {inView
                                 ? <><ArrowInfo type="right"/>
                                 <ArrowInfo type="left"/></>
@@ -103,7 +99,7 @@ function Index() {
                     <span>Scope</span> of Work
                 </h2>
                 <InView>
-                    {({inView, ref, entry}) => (
+                    {({inView, ref}) => (
                             <div className="scope--content" ref={ref}>
                                 {inView
                                         ? info.scope_info.map(
