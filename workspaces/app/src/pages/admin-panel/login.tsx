@@ -32,7 +32,7 @@ export default function Login() {
 				<input type="password" className="login--form--pass" placeholder="Password" onChange={ (e) => setPassword(e.target.value) }/>
 				<div className="login--form--check">
 					<CheckBox/>
-					<a href="" className="login--form--check--forget">Forget password?</a>
+					<a href="/recovery" className="login--form--check--forget">Forgot password?</a>
 				</div>
 				<input type="submit" value="Confirm" className="login--form--submit"/>
 				<p className="login--form--sign-up">

@@ -6,6 +6,7 @@ import Error from "./pages/ErrorPage";
 import Devices from "./pages/admin-panel/devices";
 import Login from "./pages/admin-panel/login";
 import Register from './pages/admin-panel/register';
+import Forget from "./pages/admin-panel/forget";
 
 export const Route = createBrowserRouter([
 	{
@@ -21,6 +22,10 @@ export const Route = createBrowserRouter([
 	{
 		path: '/register',
 		element: <Register/>
+	},
+	{
+		path: '/recovery',
+		element: <Forget/>
 	},
 	{
 		path: "/admin",
